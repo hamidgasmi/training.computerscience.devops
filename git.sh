@@ -128,17 +128,20 @@ git commit -m "..."
 #.... If solution is to accept remote/other-branch version:
 git checkout --theirs PATH/FILE
 
-#9. Pushing:
-#9.1. Push all committed files into a tracked remote branch
-git push origin getstartedbranch
-#9.2. Push all committed files into a detached remote branch
-#... git checkout origin/remotebranch # Local branch is created without track flag
-git push origin HEAD:remotebranch
-#9.3. Delete a remote branch from the branch's local git repository:
+# 9. Pushing:
+# 9.1. Push all committed files into a tracked remote branch
+git push origin <getstartedbranch>
+# 9.2. Push all committed files into a detached remote branch
+#..... assumption: local branch is created without track flag: git checkout origin/remotebranch
+git push origin HEAD:<remotebranch>
+# 9.3. Push all committed files from a local new branch into a remote repository and Track it too
+#..... "-u" short for "--set-upstream" option
+git push -u origin <branch>
+#9.4. Delete a remote branch from the branch's local git repository:
 git push -d origin getstartedbranch
-#9.4. Delete a remote branch from any local git location
+#9.5. Delete a remote branch from any local git location
 git push -d https://github.com/hamidgasmi/training.computerscience.linux.git get 
-#9.5. Delete a remote branch
+#9.6. Delete a remote branch
 git push origin --delete gitgetstartedbranch
 
 #10. Merging:
