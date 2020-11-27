@@ -55,10 +55,10 @@ git fetch --prune
 #4.4 Pull: Ensure our master branch is up-to-date:
 git pull origin master
 
-#5. Branches:
-#5.1. Create a branch and switch to it: it is local at this point
+# 5. Branches:
+# 5.1. Create a branch and switch to it: it is local at this point
 git checkout -b getstartedbranch
-#5.2. Switch to branches:
+# 5.2. Switch to branches:
 # ... Switch to master:
 git checkout master
 # ... Switch to an existing remote branch: 
@@ -66,45 +66,48 @@ git checkout master
 # ... If track is omitted then the local branch will be detached from the remote branch
 git fetch
 git checkout --track origin/remotebranch
-#5.3. List remote branches
+# 5.3. List remote branches
 git branch -r
-#5.4. List local branches
+# 5.4. List local branches
 git branch -l
-#5.5. List All branches:
+# 5.5. List All branches:
 git branch -a
-#5.6. Delete a local branch
+# 5.6. Delete a local branch
 git branch -d gitgetstartedbranch
+# 5.7. Rename a local branch:
+git checkout <old_branch_name>
+git branch -m <new_branch_name> # see 9.3: to push the new local branch + reset the upstream branch: git push origin -u <new_name>
 
-#6. Local changes:
-#6.1. Undo local changed (they're not stagged yet): Discarding local changes (permanently) to a file:
+# 6. Local changes:
+# 6.1. Undo local changed (they're not stagged yet): Discarding local changes (permanently) to a file:
 git checkout -- <file>
-#6.2. Discard all local changes to all files permanently: 
+# 6.2. Discard all local changes to all files permanently: 
 git reset --hard
-#6.3. Discard all local changes, but save them for possible re-use later:
+# 6.3. Discard all local changes, but save them for possible re-use later:
 git stash
 git stash save  #enables including temporary commit message, which will help you identify changes, among with other options
 git stash list  #lists all previously stashed commits (yes, there can be more) that were not poped
 git stash pop   #redoes previously stashed changes and removes them from stashed list
 git stash apply #redoes previously stashed changes, but keeps them on stashed list
 
-#7. Staging:
-#7.1. Check stagged files:
+# 7. Staging:
+# 7.1. Check stagged files:
 git status
-#7.2. Add all file of the directory to the Git staging area:
+# 7.2. Add all file of the directory to the Git staging area:
 git add .
-#7.2 Add only 1 file:
+# 7.2 Add only 1 file:
 git add ~/source/training.computerscience.linux/gitgetstarted.sh
-#7.3 Remove a file from stagging area:
+# 7.3 Remove a file from stagging area:
 git reset HEAD gitgetstarted.sh~
 
-#8. Commits
-#8.1. Commit staged files:
+# 8. Commits
+# 8.1. Commit staged files:
 git commit -m "Get started files for linux repository"
-#8.2. Commit staged files with Subject and Body (empty line between subject and body)
+# 8.2. Commit staged files with Subject and Body (empty line between subject and body)
 git commit -m "Add subject" -m " " -m "- Add line 1 for body "- Add line 2 for body"
-#8.3. Check comitted items
+# 8.3. Check comitted items
 
-#8.3. Remove a file from a non-pushed commit:
+# 8.3. Remove a file from a non-pushed commit:
 #..... Solution 1: Undo commit and keep all files staged
 #..... reset: it's most often used to make a few changes to the latest commit and/or fix its commit message 
 #............ it leaves working tree as it was before.
@@ -117,7 +120,7 @@ git reset HEAD~
 #................ The changed files are preserved but not marked for commit 
 #................ It reports what has not been updated.
 git reset --mixed HEAD~
-#8.4. Fix merging conflits:
+# 8.4. Fix merging conflits:
 cd repository-folder
 #.... list all files which has marker special marker '<<<<<<<'
 grep -lr '<<<<<<<' .
@@ -137,11 +140,11 @@ git push origin HEAD:<remotebranch>
 # 9.3. Push all committed files from a local new branch into a remote repository and Track it too
 #..... "-u" short for "--set-upstream" option
 git push -u origin <branch>
-#9.4. Delete a remote branch from the branch's local git repository:
+# 9.4. Delete a remote branch from the branch's local git repository:
 git push -d origin getstartedbranch
-#9.5. Delete a remote branch from any local git location
+# 9.5. Delete a remote branch from any local git location
 git push -d https://github.com/hamidgasmi/training.computerscience.linux.git get 
-#9.6. Delete a remote branch
+# 9.6. Delete a remote branch
 git push origin --delete gitgetstartedbranch
 
 #10. Merging:
