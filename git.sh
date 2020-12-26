@@ -104,7 +104,7 @@ git reset HEAD gitgetstarted.sh~
 # 8.1. Commit staged files:
 git commit -m "Get started files for linux repository"
 # 8.2. Commit staged files with Subject and Body (empty line between subject and body)
-git commit -m "Add subject" -m " " -m "- Add line 1 for body "- Add line 2 for body"
+git commit -m "Add subject" -m " " -m "- Add line 1 for body " -m "- Add line 2 for body"
 # 8.3. Check comitted items
 
 # 8.3. Remove a file from a non-pushed commit:
