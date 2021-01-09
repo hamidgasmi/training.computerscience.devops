@@ -105,9 +105,10 @@ git reset HEAD gitgetstarted.sh~
 git commit -m "Get started files for linux repository"
 # 8.2. Commit staged files with Subject and Body (empty line between subject and body)
 git commit -m "Add subject" -m " " -m "- Add line 1 for body " -m "- Add line 2 for body"
-# 8.3. Check comitted items
-
-# 8.3. Remove a file from a non-pushed commit:
+# 8.3. Modify commit message
+git commit --amend -m {new_message}
+# 8.4. Check comitted items
+# 8.5. Remove a file from a non-pushed commit:
 #..... Solution 1: Undo commit and keep all files staged
 #..... reset: it's most often used to make a few changes to the latest commit and/or fix its commit message 
 #............ it leaves working tree as it was before.
@@ -120,7 +121,7 @@ git reset HEAD~
 #................ The changed files are preserved but not marked for commit 
 #................ It reports what has not been updated.
 git reset --mixed HEAD~
-# 8.4. Fix merging conflits:
+# 8.6. Fix merging conflits:
 cd repository-folder
 #.... list all files which has marker special marker '<<<<<<<'
 grep -lr '<<<<<<<' .
