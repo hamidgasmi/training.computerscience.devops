@@ -24,6 +24,15 @@
 
 </details>
 
+## Kubernetes
+
+<details>
+<summary>Description</summary>
+
+- For more details:
+
+</details>
+
 ## References
 
 <details>
