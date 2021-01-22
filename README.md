@@ -25,7 +25,11 @@
 - A **Docker image** 
     - It contains everything it needs to run, independent of the Linux server on which it lives: a copy of the OS, a database, code, configuration files, dependencies, etc.
     - It can be packaged and shared with other Docker admin
+- A **Dangling image**
+    - It's layers that have no relationship to any tagged images. 
+    - It no longer serves a purpose and consumes disk space.
 - **Docker Hub**:
+- Docker Flow: image --> Running Container --> Stopped container --> new image
 - Requirements:
     - Docker needs a Linux server
     - In the same server, 2 different containers could run two different OS
