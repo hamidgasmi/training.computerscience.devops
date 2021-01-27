@@ -99,6 +99,8 @@ git add .
 git add ~/source/training.computerscience.linux/gitgetstarted.sh
 # 7.3 Remove a file from stagging area:
 git reset HEAD gitgetstarted.sh~
+# 7.4 Get files that are stagged area:
+git diff --staged
 
 # 8. Commits
 # 8.1. Commit staged files:
