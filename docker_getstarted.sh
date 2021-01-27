@@ -38,8 +38,16 @@ docker run -ti ubuntu             # latest is the default tag
 ## DISTRIB_CODENAME=focal
 ## DISTRIB_DESCRIPTION="Ubuntu 20.04.1 LTS"
 ## exit (or CTL d)
-# 2.2. Run a container by using image ID
+# 2.2. ... by using image ID
 docker run -ti bf756fb1ae65 bash
+# 2.3. ... + add command
+docker run -ti ubuntu bash -c "sleep 3; echo all done"
+# 2.4. ... for N seconds
+docker run -ti ubuntu bash -c "sleep 3; echo all done" sleep 5
+# 2.5. ... + delete a container when it exits
+docker run --rm -ti ubuntu bash -c "sleep 3; echo all done" sleep 5
+# 2.5. ... detached
+docker run -d -ti ubuntu bash
 # 2.10. Running containers
 docker ps   # with default formatting (horizontal)
 docker ps --format "\nID\t{{.ID}}\nIMAGE\t{{.Image}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.RunningFor}}\nSTATUS\t{{.Status}}\nPORTS\t{{.Ports}}\nNAMES\t{{.Names}}\n"
@@ -50,9 +58,12 @@ Status 0   : succes
 Status 127 :
 Status 130 :
 ## Check PORT for networking
-# 2.20. remove a container
+# 2.20. attach a detached container
+docker attach {container-name}
+#... Detach and keep a docker running: ctl+p ctl+q
+# 2.30. remove a container
 docker rm {container-ID}
-# 2.21. remove all containers
+# 2.31. remove all containers
 docker rm $(docker ps -a -q)
 
 # 3. Create an docker image out of an docker container
@@ -63,6 +74,10 @@ docker images # to find the new image
 # 3.2. Commit with container name
 docker commit {container-name} {image-name}
 docker images # to find the new image
+
+# 4. Exec new process
+docker exec [-flags][container-name]
+docker exec -ti happy_kare bash
 
 
 
