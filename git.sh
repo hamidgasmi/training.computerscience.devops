@@ -74,7 +74,9 @@ git branch -l
 git branch -a
 # 5.6. Delete a local branch
 git branch -d gitgetstartedbranch
-# 5.7. Rename a local branch:
+# 5.7. Delete a remote branch
+git push origin --delete remotebranch
+# 5.8. Rename a local branch:
 git checkout <old_branch_name>
 git branch -m <new_branch_name> # see 9.3: to push the new local branch + reset the upstream branch: git push origin -u <new_name>
 
