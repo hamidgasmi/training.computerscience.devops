@@ -30,7 +30,8 @@ Please describe the tests that you ran to verify your changes.
 - [ ] New and existing unit tests pass locally with my changes
 - [ ] Any changes to strings have been published to our translation tool
 
---
+---
+
 Adapted from:
 - [Embedded Artistry templates repo](https://github.com/embeddedartistry/templates)
 - [Annyce Davis course]:
