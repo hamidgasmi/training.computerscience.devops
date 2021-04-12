@@ -35,5 +35,5 @@ Please describe the tests that you ran to verify your changes.
 Adapted from:
 - [Embedded Artistry templates repo](https://github.com/embeddedartistry/templates)
 - [Annyce Davis course]:
-   - [here](https://gist.github.com/adavis/9fe5ea92d9b19727cbe7b69e8c9e9f66#file-pull_request_template-md)
-   - [here](https://adavis.info/2018/09/frustration-free-code-reviews.html)
+   - [Repo](https://gist.github.com/adavis/9fe5ea92d9b19727cbe7b69e8c9e9f66#file-pull_request_template-md)
+   - [Blog article](https://adavis.info/2018/09/frustration-free-code-reviews.html)
