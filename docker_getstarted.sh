@@ -147,6 +147,15 @@ docker rm {container-name}
 # ... remove all containers
 docker rm $(docker ps -a -q)
 
+# 8. Cleanup all containers. The command below will remove:
+# ... All stopped containers
+# ... All networks not used by at least one container
+# ... All dangling images
+# ... All build cache
+docker system prune
+
+
+
 
 
 
