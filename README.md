@@ -66,6 +66,7 @@
     - Exit: `CTL d` or `exit`
     - Resource Constraints:
         - Memory limits: docker run --memory maximum-allowed-memory {image-name} {command}
+    - If a command is included, it will be then override the docker image startup command
 - docker attach:
     - Detach and keep a docker running: `ctl+p ctl+q`
 - docker exec:
