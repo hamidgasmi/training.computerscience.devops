@@ -23,6 +23,14 @@
 
 - Docker is an engine that runs containers.
 - A container is a sealed, self-contained unit of software that have everything needed to run a service.
+    - It uses **namespacing** and **Control Groups** to isolate resources per process (or group of processes).
+    - **Namespacing** is a hard disk segmentation that allows to isolate resources per process (or group of processes). For example, we can namespace a process:
+        - to restrict the area of a hard drive that is available or 
+        - to restrict the network devices that are available or 
+        - to restrict the ability to talk to other processes or the ability to see other processes
+    - **A Control Group** is used to limit the amount of resources that a particular process can use. For example, we can use a control group:
+        - to limit the amount of memory that a process can use
+        - to limit the amount of cpu, the amount of hard drive I/O and the amount of network bandwidth as well
 - Containers make deployment easy:
     - Deploying is as simple as running a new container, routing users to the new one, and trashing the old one. 
     - It can even be automated by **orchestration** tools.
