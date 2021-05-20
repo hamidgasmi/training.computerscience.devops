@@ -27,7 +27,12 @@ docker images prune [-{flag}]
 docker images prune -a # remove all images not referenced by any container.
 
 # 2. Docker container
+# 2.0. Create and Start a docker
+docker create {container-image-name}
+docker start [-a] {container-ID} # -a flag to let the docker diplays its output in the cli.
+# to use docker log to see docker output if container is start without -a flag
 # 2.1. Run a container by using name + tag (version) + override command (this command override the image startup command)
+# ... docker run = docker create + docker start
 docker run [{flag}]{container-image-name}[:{tag}][{override command}]
 docker run -ti ubuntu:latest bash # -ti for Terminal Interactive, bash command to run in ubuntu
 docker run -ti ubuntu:latest
