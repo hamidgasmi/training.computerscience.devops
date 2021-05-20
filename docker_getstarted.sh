@@ -30,6 +30,7 @@ docker images prune -a # remove all images not referenced by any container.
 # 2.0. Create and Start a docker
 docker create {container-image-name}
 docker start [-a] {container-ID} # -a flag to let the docker diplays its output in the cli.
+# docker start could be used to restart a container that is stopped but we can not override its default startup command then.
 # to use docker log to see docker output if container is start without -a flag
 # 2.1. Run a container by using name + tag (version) + override command (this command override the image startup command)
 # ... docker run = docker create + docker start
@@ -100,6 +101,9 @@ docker port echo-server
 # ... In a 2nd terminal:
 docker run --rm -ti ubuntu:14.04 bash
 > nc -u host.docker.internal 49154 # outside port -u for udp
+
+# 3. Restart a container
+docker start {container-Id} # We can not override its default startup command.
 
 # 3. docker ps: Running containers
 docker ps   # with default formatting (horizontal)
