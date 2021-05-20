@@ -131,6 +131,7 @@ docker exec -ti happy_kare bash
 # 5. Logs
 docker logs {container-ID}
 docker logs {container-name}
+# docker start -a container-id = docker start container-id + docker logs container-id
 
 # 6. Stop a container
 docker kill {container-ID}
