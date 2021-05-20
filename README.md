@@ -37,6 +37,7 @@
 - A **Docker image** 
     - It contains everything it needs to run, independent of the Linux server on which it lives: a copy of the OS, a database, code, configuration files, dependencies, etc.
     - It can be packaged and shared with other Docker admin
+    - It is a File-System snapshot + a Startup command
 - A **Dangling image**
     - It's layers that have no relationship to any tagged images. 
     - It no longer serves a purpose and consumes disk space.
