@@ -27,8 +27,8 @@ docker images prune [-{flag}]
 docker images prune -a # remove all images not referenced by any container.
 
 # 2. Docker container
-# 2.1. Run a container by using name + tag (version)
-docker run [{flag}]{container-image-name}[:{tag}][{command to run in container}]
+# 2.1. Run a container by using name + tag (version) + override command (this command override the image startup command)
+docker run [{flag}]{container-image-name}[:{tag}][{override command}]
 docker run -ti ubuntu:latest bash # -ti for Terminal Interactive, bash command to run in ubuntu
 docker run -ti ubuntu:latest
 docker run -ti ubuntu             # latest is the default tag
