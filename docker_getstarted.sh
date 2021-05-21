@@ -139,25 +139,33 @@ Status 130 :
 docker attach {container-name}
 #... Detach and keep a docker running: ctl+p ctl+q
 
-# 8. Create an docker image out of an docker container
-# 8.1. Commit + Tag commands
-docker commit {container-ID} ## Get an image ID as a sha256
-docker tag {image-ID-sha256} {image-name}
-docker images # to find the new image
-# 8.2. Commit with container name
-docker commit {container-name} {image-name}
-docker images # to find the new image
-
-
-# 9. remove a container
+# 8. remove a container
 docker rm {container-ID}
 docker rm {container-name}
 # ... remove all containers
 docker rm $(docker ps -a -q)
 
-# 10. Cleanup all containers. The command below will remove:
+# 9. Cleanup all containers. The command below will remove:
 # ... All stopped containers
 # ... All networks not used by at least one container
 # ... All dangling images
 # ... All build cache
 docker system prune
+
+# 10. Create an docker image out of an docker container
+# 10.1. Commit + Tag commands
+docker commit {container-ID} ## Get an image ID as a sha256
+docker tag {image-ID-sha256} {image-name}
+docker images # to find the new image
+# 10.2. Commit with container name
+docker commit {container-name} {image-name}
+docker images # to find the new image
+
+# 11. Create an docker image out of a dockerfile
+# ... Process: dockerfile -> docker client -> docker server -> usable image
+mkdir docker            # 1. create a folder where the dockerfile will be created
+code docker/Dockerfile  # 2. create a dockerfile. Here I use visual studio code to do it.
+docker build docker/.   # 3. build the docker folder
+# ...
+# 
+docker run {my-new-docker-image-id}
