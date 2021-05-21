@@ -57,7 +57,8 @@
 <details>
 <summary>Docker commands + shortcut</summary>
 
-- docker run: 
+- docker run:
+    - docker create + docker start
     - The Container has a main process
     - The container stops when the main process stops
     - The container is not done until the main process exits, even if the the container has other processes
@@ -78,7 +79,13 @@
     - Good particularly when a container stopped
     - Logs are available as long as their container is also available
     - Don't let the output get too large: it could slow down Docker to the point where our whole system becomes unresponsive
+- docker stop:
+    - It issues a `SIGTERM` signal and is sent to the primary process inside the container
+    - It gives 10 seconds to the container's main process to shutdown properly: E.g. close any open connection (db), save open files, etc
+    - After 10 seconds, if the container is not stopped, it automatically falls back to issue a `docker kill` command
 - docker kill
+    - It issues a `SIGKILL` signal and is sent to the primary process inside the container
+    - It stops **immediately** the container without any additional time/work prior to the shutdown
 - docker rm
 
 </details>
