@@ -91,6 +91,22 @@
 </details>
 
 <details>
+<summary>Docker Flags</summary>
+    
+- `-i`:
+    -  To attach a run or an executed container process STDIN channel to the CLI
+    -  Commands: `docker run`, `docker exec`
+- `-t`
+    - To format a run or an executed container output in the CLI
+    -  Commands: `docker run`, `docker exec`
+- `-it`
+    - Equal to `-i -t`
+    - To remember: `- it` for `Interactive Terminal`
+    -  Commands: `docker run`, `docker exec`
+    
+</details>
+
+<details>
 <summary>Anti-pattern and Best practices</summary>
 
 - Don't let our containers fetch dependencies when they start:
