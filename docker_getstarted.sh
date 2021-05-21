@@ -45,18 +45,18 @@ docker run -it ubuntu             # latest is the default tag
 ## DISTRIB_DESCRIPTION="Ubuntu 20.04.1 LTS"
 ## exit (or CTL d)
 # 2.2. ... by using image ID
-docker run -ti {image-ID} bash
-docker run -ti bf756fb1ae65 bash
+docker run -it {image-ID} bash
+docker run -it bf756fb1ae65 bash
 # 2.3. ... + give the container a name
-docker run --name hamid-container -ti ubuntu bash
+docker run --name hamid-container -it ubuntu bash
 # 2.3. ... + add command
-docker run -ti ubuntu bash -c "sleep 3; echo all done"
+docker run -it ubuntu bash -c "sleep 3; echo all done"
 # 2.4. ... for N seconds
-docker run -ti ubuntu bash -c "sleep 3; echo all done" sleep 5
+docker run -it ubuntu bash -c "sleep 3; echo all done" sleep 5
 # 2.5. ... + delete a container when it exits
-docker run --rm -ti ubuntu bash -c "sleep 3; echo all done" sleep 5
+docker run --rm -it ubuntu bash -c "sleep 3; echo all done" sleep 5
 # 2.5. ... detached
-docker run -d -ti ubuntu bash
+docker run -d -it ubuntu bash
 # 2.10. Resource Constraints:
 # 2.11. Memory Limits
 docker run --memory maximum-allowed-memory {image-name} {command}
