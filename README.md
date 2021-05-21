@@ -103,7 +103,8 @@
     - To remember: `- it` for `Interactive Terminal`
     -  Commands: `docker run`, `docker exec`
 - `sh`:
-    - It gives us the possibility to execute commands inside a running container without the need of writing `docker exec`
+    - It is not really a flag. It is a command that is usually included in all containers
+    - It gives us the possibility to execute commands inside a running container without the need `docker exec`
     - Commands: `docker exec`    
 
 </details>
