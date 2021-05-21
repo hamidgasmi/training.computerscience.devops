@@ -130,9 +130,9 @@
 <details>
 <summary>Dockerfile instructions</summary>
     
-- `FROM`:
-- `RUN`:
-- `COMMAND`:
+- `FROM arg`: to specify the Docker image that we want to use as a base image
+- `RUN arg`: to execute additional commands on top of the base image ti customize our image
+- `COMMAND arg`: to list the default startup commands of the container image
 
 </details>
 
