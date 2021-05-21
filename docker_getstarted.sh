@@ -103,11 +103,14 @@ docker run --rm -it ubuntu:14.04 bash
 > nc -u host.docker.internal 49154 # outside port -u for udp
 
 # 3. Exec a new process inside a container: let have a multiple commands container
-docker exec [-flags] {container-name}
+docker exec [-flags] {container-name} sh # sh flags let's us run commands inside the container without the need to docker exec
 docker exec -it happy_kare bash
 # 3.1. Example: create a container with that has 2 processes: redis and redis-cli
 docker run redis
 docker exec -it {redis-container-id} redis-cli
+# 3.2. Example: create a container with that has 2 processes: redis and redis-cli
+docker run -it redis sh
+# redis-cli (inside the container)
 
 # 4. Stop a container
 docker stop {container-ID}
