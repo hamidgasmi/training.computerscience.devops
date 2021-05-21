@@ -101,6 +101,8 @@
         - Some day, a library could be removed from node.js repo, all our containers just stops
 - Don't leave important things in unnamed stopped containers:
     - You may remove them when you need to clean up stopped containers
+- Don't use `docker kill` to stop a container:
+    - Use `docker stop` instead
 
 </details>
 
