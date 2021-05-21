@@ -86,6 +86,12 @@
     - It issues a `SIGKILL` signal and is sent to the primary process inside the container
     - It stops **immediately** the container without any additional time/work prior to the shutdown
 - docker rm
+- create a docker image from a dockerfile:
+    - The process is: dockerfile -> docker client -> docker server -> usable image
+    - A dockerfile is a configuration file that defines how our container should behave:
+        - It specifies a base image
+        - It specifies which additional commands that should be run on top of the base image
+        - It specifies the default startup command of the container image
 
 </details>
 
@@ -118,6 +124,15 @@
 
 - `CTL c` or `CTL d` or `exit`:
     - to exit
+
+</details>
+
+<details>
+<summary>Dockerfile instructions</summary>
+    
+- `FROM`:
+- `RUN`:
+- `COMMAND`:
 
 </details>
 
