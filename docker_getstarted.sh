@@ -35,9 +35,9 @@ docker start [-a] {container-ID} # -a flag to let the docker diplays its output 
 # 2.1. Run a container by using name + tag (version) + override command (this command override the image startup command)
 # ... docker run = docker create + docker start
 docker run [{flag}]{container-image-name}[:{tag}][{override command}]
-docker run -ti ubuntu:latest bash # -ti for Terminal Interactive, bash command to run in ubuntu
-docker run -ti ubuntu:latest
-docker run -ti ubuntu             # latest is the default tag
+docker run -it ubuntu:latest bash # -it = -i -t. -i to attach process STDIN channel to the CLI; -t to format output (to remember Interactive Terminal)
+docker run -it ubuntu:latest
+docker run -it ubuntu             # latest is the default tag
 ## root@ae280b3ddcf2:/# cat /etc/lsb-release
 ## DISTRIB_ID=Ubuntu
 ## DISTRIB_RELEASE=20.04
@@ -66,13 +66,13 @@ docker run --cpu-quota {hard limit} # Hard limit
 # 2.20 Networking: -p: Publish a port
 docker run -p outside-port-to-publish:inside-port-to-listen-to/protocol #(tcp/udp)
 # ... exposing/publishing 2 ports:
-docker run --rm -ti -p 45678:45678 -p 45679:45679 --name echo-server ubuntu:14.04 bash
+docker run --rm -it -p 45678:45678 -p 45679:45679 --name echo-server ubuntu:14.04 bash
 nc -lp 45678 | nc -lp 45679
 # ... In a 2nd terminal:
-docker run --rm -ti ubuntu:14.04 bash
+docker run --rm -it ubuntu:14.04 bash
 > nc host.docker.internal 45678
 # ... In a 3rd terminal:
-docker run --rm -ti ubuntu:14.04 bash
+docker run --rm -it ubuntu:14.04 bash
 > nc host.docker.internal 45679
 # ... from the 2nd terminal
 Test message
@@ -80,34 +80,34 @@ Test message
 Test message
 # ... 2nd ncat -> 1st. ncat -> 3rd. ncat
 # 2.21 Networking: -p: Publish ports dynamically
-docker run --rm -ti -p 45678 -p 45679 --name echo-server ubuntu:14.04 bash
+docker run --rm -it -p 45678 -p 45679 --name echo-server ubuntu:14.04 bash
 nc -lp 45678 | nc -lp 45679
 # ... in another terminal:
 docker port echo-server
 45678/tcp -> 0.0.0.0:49154
 45679/tcp -> 0.0.0.0:49274
 # ... In a 2nd terminal:
-docker run --rm -ti ubuntu:14.04 bash
+docker run --rm -it ubuntu:14.04 bash
 > nc host.docker.internal 49154 # outside port
 # ... In a 3nd terminal:
-docker run --rm -ti ubuntu:14.04 bash
+docker run --rm -it ubuntu:14.04 bash
 > nc host.docker.internal 49274 # outside port
 # 2.20 Networking: -p: UDP port
-docker run --rm -ti -p 45678/udp --name echo-server ubuntu:14.04 bash
+docker run --rm -it -p 45678/udp --name echo-server ubuntu:14.04 bash
 > nc -ulp 45678
 # ... in another terminal:
 docker port echo-server
 45678/tcp -> 0.0.0.0:49154
 # ... In a 2nd terminal:
-docker run --rm -ti ubuntu:14.04 bash
+docker run --rm -it ubuntu:14.04 bash
 > nc -u host.docker.internal 49154 # outside port -u for udp
 
 # 3. Exec a new process inside a container: let have a multiple commands container
 docker exec [-flags] {container-name}
-docker exec -ti happy_kare bash
+docker exec -it happy_kare bash
 # 3.1. Example: create a container with that has 2 processes: redis and redis-cli
 docker run redis
-docker exec -ti {redis-container-id} redis-cli
+docker exec -it {redis-container-id} redis-cli
 
 # 4. Stop a container
 docker stop {container-ID}
