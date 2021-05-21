@@ -167,5 +167,6 @@ mkdir docker            # 1. create a folder where the dockerfile will be create
 code docker/Dockerfile  # 2. create a dockerfile. Here I use visual studio code to do it.
 docker build docker/.   # 3. build the docker folder
 # ...
-# 
-docker run {my-new-docker-image-id}
+# => => exporting layers                                                      
+# 0.0s => => writing image sha256:ee59c34ada9890ca09145cc88ccb25d32b677fc3b61e921  0.0s
+docker run sha256:ee59c34ada9890ca09145cc88ccb25d32b677fc3b61e921
