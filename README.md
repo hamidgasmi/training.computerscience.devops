@@ -105,7 +105,11 @@
 - `sh`:
     - It is not really a flag. It is a command that is usually included in all containers
     - It gives us the possibility to execute commands inside a running container without the need `docker exec`
-    - Commands: `docker exec`    
+    - Usefull for debugging purposes
+    - Commands: `docker exec`, `docker run`
+    - `docker run -t ... sh` does prevent the default startup command to run.
+        - It is not usually used
+        - We usually start a container with its default startup command (E.g. a webserver) and then run `docker exec -t ... sh` to debug
 
 </details>
 
