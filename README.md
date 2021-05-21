@@ -55,7 +55,7 @@
 </details>
 
 <details>
-<summary>Docker commands + shortcut</summary>
+<summary>Docker commands</summary>
 
 - docker run:
     - docker create + docker start
@@ -64,7 +64,6 @@
     - The container is not done until the main process exits, even if the the container has other processes
     - The container has a name. 
     - Docker will make a name up if it isnot included in the command
-    - Exit: `CTL d` or `exit`
     - Resource Constraints:
         - Memory limits: docker run --memory maximum-allowed-memory {image-name} {command}
     - If a command is included, it will be then override the docker image startup command
@@ -106,6 +105,14 @@
 - `sh`:
     - It gives us the possibility to execute commands inside a running container without the need of writing `docker exec`
     - Commands: `docker exec`    
+
+</details>
+
+<details>
+<summary>Docker shortcut</summary>
+
+- `CTL c` or `CTL d` or `exit`:
+    - to exit
 
 </details>
 
