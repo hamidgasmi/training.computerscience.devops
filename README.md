@@ -96,14 +96,17 @@
 - `-i`:
     -  To attach a run or an executed container process STDIN channel to the CLI
     -  Commands: `docker run`, `docker exec`
-- `-t`
-    - To format a run or an executed container output in the CLI
+- `-t`:
+    - To format a run or an executed container output
     -  Commands: `docker run`, `docker exec`
-- `-it`
+- `-it`:
     - Equal to `-i -t`
     - To remember: `- it` for `Interactive Terminal`
     -  Commands: `docker run`, `docker exec`
-    
+- `sh`:
+    - It gives us the possibility to execute commands inside a running container without the need of writing `docker exec`
+    - Commands: `docker exec`    
+
 </details>
 
 <details>
