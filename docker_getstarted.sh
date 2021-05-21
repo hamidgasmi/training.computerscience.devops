@@ -102,10 +102,27 @@ docker port echo-server
 docker run --rm -ti ubuntu:14.04 bash
 > nc -u host.docker.internal 49154 # outside port -u for udp
 
-# 3. Restart a container
+# 3. Exec a new process inside a container: let have a multiple commands container
+docker exec [-flags] {container-name}
+docker exec -ti happy_kare bash
+# 3.1. Example: create a container with that has 2 processes: redis and redis-cli
+docker run redis
+docker exec -ti {redis-container-id} redis-cli
+
+# 4. Stop a container
+docker stop {container-ID}
+docker kill {container-ID}
+docker kill {container-name}
+
+# 5. Restart a container
 docker start {container-Id} # We can not override its default startup command.
 
-# 3. docker ps: Running containers
+# 6. Logs
+docker logs {container-ID}
+docker logs {container-name}
+# docker start -a container-id = docker start container-id + docker logs container-id
+
+# 7. docker ps: Running containers
 docker ps   # with default formatting (horizontal)
 docker ps --format "\nID\t{{.ID}}\nIMAGE\t{{.Image}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.RunningFor}}\nSTATUS\t{{.Status}}\nPORTS\t{{.Ports}}\nNAMES\t{{.Names}}\n"
 docker ps -a # to see all container, even those that are stopped
@@ -119,45 +136,25 @@ Status 130 :
 docker attach {container-name}
 #... Detach and keep a docker running: ctl+p ctl+q
 
-# 3. Create an docker image out of an docker container
-# 3.1. Commit + Tag commands
+# 8. Create an docker image out of an docker container
+# 8.1. Commit + Tag commands
 docker commit {container-ID} ## Get an image ID as a sha256
 docker tag {image-ID-sha256} {image-name}
 docker images # to find the new image
-# 3.2. Commit with container name
+# 8.2. Commit with container name
 docker commit {container-name} {image-name}
 docker images # to find the new image
 
-# 4. Exec new process
-docker exec [-flags] {container-name}
-docker exec -ti happy_kare bash
 
-# 5. Logs
-docker logs {container-ID}
-docker logs {container-name}
-# docker start -a container-id = docker start container-id + docker logs container-id
-
-# 6. Stop a container
-docker kill {container-ID}
-docker kill {container-name}
-
-# 7. remove a container
+# 9. remove a container
 docker rm {container-ID}
 docker rm {container-name}
 # ... remove all containers
 docker rm $(docker ps -a -q)
 
-# 8. Cleanup all containers. The command below will remove:
+# 10. Cleanup all containers. The command below will remove:
 # ... All stopped containers
 # ... All networks not used by at least one container
 # ... All dangling images
 # ... All build cache
 docker system prune
-
-
-
-
-
-
-
-
