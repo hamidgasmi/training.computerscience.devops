@@ -163,3 +163,14 @@ git pull origin master
 git merge getstartedbranch
 git push origin master
 git push origin --delete gitgetstartedbranch
+
+#10.50. Merge fork repo from original repo
+#.... Clone your fork repository locally
+git clone <forked-repository>
+#.... Get upstream url if unknown
+git remote -v
+#.... Set the original repo as your upstream repo
+git remote add upstream <original repo>
+#.... Update your local Master to be in synch with the original repo
+git pull upstream master
+#.... More details: https://levelup.gitconnected.com/how-to-update-fork-repo-from-original-repo-b853387dd471
