@@ -16,6 +16,8 @@ docker
 docker info
 
 # 1. Docker Images
+## 1.0. Pull a docker image
+docker pull imageName (E.g. docker pull postgres)
 ## 1.1. List images
 docker images
 ## 1.2. List all dangling images
