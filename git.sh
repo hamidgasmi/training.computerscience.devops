@@ -49,14 +49,16 @@ git remote -v
 #origin	git@github.com:hamidgasmi/training.computerscience.linux.git (push)
 
 #4 Get started with repositories
-#4.1 Clone a remote project: training.computerscience.linux.git
+#4.1. Display all the previous pushes
+git log
+#4.2 Clone a remote project: training.computerscience.linux.git
 git clone https://github.com/hamidgasmi/training.computerscience.linux.git
-#4.2 Fetch: Update local git with remote information: e.g., remote branches list (it does not include code)
+#4.3 Fetch: Update local git with remote information: e.g., remote branches list (it does not include code)
 #... It does not remove remote branches that no longer have a counterpart branch on the remote
 git fetch
-#4.3 Fetch + explicitly delete remote branches in local:
+#4.4 Fetch + explicitly delete remote branches in local:
 git fetch --prune
-#4.4 Pull: Ensure our master branch is up-to-date:
+#4.5 Pull: Ensure our master branch is up-to-date:
 git pull origin master
 
 # 5. Branches:
