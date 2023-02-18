@@ -9,6 +9,10 @@ sudo apt-get update
 git config --global user.name "Hamid Gasmi"
 #2.2 Configure the email @
 git config --global user.email "mamid1706@hotmail.fr"
+#2.3 Display curremt git configuration
+git config --list
+#2.4 Display a specific configuration
+git config user.name
 
 #3. GitHub
 #3.1. SSH
