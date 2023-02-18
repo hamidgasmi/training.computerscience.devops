@@ -88,7 +88,8 @@ git branch -m <new_branch_name> # see 9.3: to push the new local branch + reset 
 
 # 6. Local changes:
 # 6.1. Undo local changed (they're not stagged yet): Discarding local changes (permanently) to a file:
-git restore --<file>
+git restore <file>
+git restore
 # git restore README.md
 # git restore .
 # git checkout -- works too... old version that could be misleading as it's used for checking HEAD to a commit (see below) 
@@ -109,6 +110,8 @@ git add .
 # 7.2 Add only 1 file:
 git add ~/source/training.computerscience.linux/gitgetstarted.sh
 # 7.3 Remove a file from stagging area:
+git restore --stagged <file>
+git restore -S <file>
 git reset HEAD gitgetstarted.sh~
 # 7.4 Get files that are stagged area:
 git diff --staged
