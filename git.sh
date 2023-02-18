@@ -51,6 +51,7 @@ git remote -v
 #4 Get started with repositories
 #4.1. Display all the previous pushes
 git log
+git log --oneline
 #4.2 Clone a remote project: training.computerscience.linux.git
 git clone https://github.com/hamidgasmi/training.computerscience.linux.git
 #4.3 Fetch: Update local git with remote information: e.g., remote branches list (it does not include code)
@@ -135,7 +136,10 @@ git push --force repository-name branch-name # NOT SAFE: will destroy any change
 #..... soft: it doesn't touch the index file or the working tree at all 
 #........... it resets the head to the previous commit
 git reset --soft HEAD~
-#..... Solution 2: Undo commit and unstage all files 
+#..... Solution 2: Undo commit and unstage all files
+git log oneline # to find previous commit hash
+git reset <prev-commit-hash> # undo commit
+# .... Shortcut:
 git reset HEAD~
 #................ mixed will reset the index but not the working tree:
 #................ The changed files are preserved but not marked for commit 
