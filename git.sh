@@ -88,7 +88,10 @@ git branch -m <new_branch_name> # see 9.3: to push the new local branch + reset 
 
 # 6. Local changes:
 # 6.1. Undo local changed (they're not stagged yet): Discarding local changes (permanently) to a file:
-git checkout -- <file>
+git restore --<file>
+# git restore README.md
+# git restore .
+# git checkout -- works too... old version that could be misleading as it's used for checking HEAD to a commit (see below) 
 # 6.2. Discard all local changes to all files permanently: 
 git reset --hard
 # 6.3. Discard all local changes, but save them for possible re-use later:
