@@ -49,14 +49,16 @@ git remote -v
 #origin	git@github.com:hamidgasmi/training.computerscience.linux.git (push)
 
 #4 Get started with repositories
-#4.1 Clone a remote project: training.computerscience.linux.git
+#4.1. Display all the previous pushes
+git log
+#4.2 Clone a remote project: training.computerscience.linux.git
 git clone https://github.com/hamidgasmi/training.computerscience.linux.git
-#4.2 Fetch: Update local git with remote information: e.g., remote branches list (it does not include code)
+#4.3 Fetch: Update local git with remote information: e.g., remote branches list (it does not include code)
 #... It does not remove remote branches that no longer have a counterpart branch on the remote
 git fetch
-#4.3 Fetch + explicitly delete remote branches in local:
+#4.4 Fetch + explicitly delete remote branches in local:
 git fetch --prune
-#4.4 Pull: Ensure our master branch is up-to-date:
+#4.5 Pull: Ensure our master branch is up-to-date:
 git pull origin master
 
 # 5. Branches:
@@ -86,7 +88,10 @@ git branch -m <new_branch_name> # see 9.3: to push the new local branch + reset 
 
 # 6. Local changes:
 # 6.1. Undo local changed (they're not stagged yet): Discarding local changes (permanently) to a file:
-git checkout -- <file>
+git restore --<file>
+# git restore README.md
+# git restore .
+# git checkout -- works too... old version that could be misleading as it's used for checking HEAD to a commit (see below) 
 # 6.2. Discard all local changes to all files permanently: 
 git reset --hard
 # 6.3. Discard all local changes, but save them for possible re-use later:
