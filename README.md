@@ -11,8 +11,25 @@
 <details>
 <summary>Description</summary>
 
-- For more details:
-    - [Oh Shit, Git!?!](https://ohshitgit.com/)
+ - Git change workflows:
+    - Status: Modified (M), Untracked (U) for new files
+```
+    Local File  | Working File    |   Staging Area    | .git directory | Remote branch
+     unmodif  ----->change (m,u)------> change (m,u)-----> .git change-----> remote change 
+               edit            git add              git commit       git push
+
+              <----    (m,u)    <-----   (m,u)     <----- (.g-c)
+            git restore       git restore -S       git reset
+                       (m,u)   <------------------------ (.g-c)
+                                   git reset <prev_com>
+```
+
+</details>
+
+<details>
+<summary>References</summary>
+
+- [Oh Shit, Git!?!](https://ohshitgit.com/)
 
 </details>
 
