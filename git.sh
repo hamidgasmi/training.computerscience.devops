@@ -64,9 +64,10 @@ git pull origin master
 
 # 5. Branches:
 # 5.1. Create a branch and switch to it: it is local at this point
-git checkout -b getstartedbranch
-# 5.2. Switch to branches:
-# ... Switch to master:
+git switch -c <new branch>
+# git checkout -b <new branch> -- works too... old version that could be misleading as it's used for checking HEAD to a commit (see below) 
+# 5.2. Switch to existing local branch:
+git switch -c <local-branch>
 git checkout master
 # ... Switch to an existing remote branch: 
 # ... track flag let the local branch to track the remote branch from origin
@@ -97,11 +98,12 @@ git restore
 # 6.2. Discard all local changes to all files permanently: 
 git reset --hard
 # 6.3. Discard all local changes, but save them for possible re-use later:
+#......git stash saves workspace file in a kind of Queue. Each stashes change has an index
 git stash
 git stash save  #enables including temporary commit message, which will help you identify changes, among with other options
-git stash list  #lists all previously stashed commits (yes, there can be more) that were not poped
-git stash pop   #redoes previously stashed changes and removes them from stashed list
-git stash apply #redoes previously stashed changes, but keeps them on stashed list
+git stash list  #list stash Queue. Each stashed change has an index
+git stash pop  #Dequeue 1st. stashed change and Applies it
+git stash apply <stash_index> #Applies stashed change at index {idx}, keeps them in the Queue
 
 # 7. Staging:
 # 7.1. Check stagged files:
@@ -190,3 +192,5 @@ git remote add upstream <original repo>
 #.... Update your local Master to be in synch with the original repo
 git pull upstream master
 #.... More details: https://levelup.gitconnected.com/how-to-update-fork-repo-from-original-repo-b853387dd471
+
+# 11. Rebasing
