@@ -6,13 +6,20 @@ sudo apt-get update
 
 #2. Configuration:
 #2.1 Configure the username
-git config --global user.name "Hamid Gasmi"
+git config --global user.name "Name FistName"
 #2.2 Configure the email @
-git config --global user.email "mamid1706@hotmail.fr"
+git config --global user.email "n.f@domain.com"
 #2.3 Display curremt git configuration
 git config --list
 #2.4 Display a specific configuration
 git config user.name
+#2.5 Cache credential
+# ---- store
+git config --global credential.helper store
+# ---- cache
+git config --global credential.helper "cache --timeout=3600"
+
+
 
 #3. GitHub
 #3.1. SSH
@@ -20,7 +27,7 @@ git config user.name
 #...... It should one of the following: id_rsa.pub, id_ecdsa.pub, id_ed25519.pub
 ls -al ~/.ssh
 #3.1.2. Generating a new SSH key and adding it to the ssh-agent:
-ssh-keygen -t rsa -b 4096 -C "mamid1706@hotmail.fr"
+ssh-keygen -t rsa -b 4096 -C "n.f@domain.com"
 # > Enter a file in which to save the key (/home/you/.ssh/id_rsa): [Press enter]
 #......This accepts the default file location.
 # > Enter passphrase (empty for no passphrase): [Type a secure passphrase]
